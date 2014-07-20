@@ -1,5 +1,6 @@
 \documentclass[10pt]{book}
 \usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
 
 \title{THP Code of Conduct}
 %\author{\texttt{\#00000000 (IWant2PlayTouhou/bluebear94)}}
@@ -144,6 +145,7 @@ The Leader has the power to:
  \item Admit or (incl) remove any Member to or (incl) from the group
  \item Set criteria for admittance or (incl) removal from the group
  \item Establish an official language
+ \item Set the number of infraction points of any Member; no fewer than negative fifty ($-50$) and no more than one hundred fifty (150).
  \item Not perform one or more of these actions
 \end{enumerate}
 
@@ -189,7 +191,7 @@ Moderators have the right and responsibility to:
 No Member not satisfying the criteria below may become a Moderator:
 
 \begin{enumerate}
- \item Have fewer than two (2) posting infractions
+ \item Have fewer than twenty-five (25) infraction points
  \item Have been a Member for at least eight (8) days
  \item Have made at least two (2) posts
 \end{enumerate}
@@ -246,62 +248,44 @@ No Member may possess more than one (1) official position simultaneously.
 \chapter{Regulations on posting}
 \label{chapter:postreg}
 
-\section{Prohibited content}
-\label{sec:procon}
+\section{Infraction points}
 
-Posts in the domains of Touhou Prono fulfilling one or more of the following criteria may be edited to comply with regulations or deleted:
+A newly joined Member is given zero (0) infraction points, unless he or she was previously removed involuntarily, in which case he or she shall be given one hundred forty-nine (149) infraction points.
 
-\begin{enumerate}
- \item Falsifying information about Touhou Prono or the Code, unless explicitly declared as such
- \item Illegal content
- \item Racial slurs
- \item Excessive profanity
- \item Embedded pornographic or otherwise NSFW (not safe for work) content, or links to such content without a sufficient warning
- \item Impersonating another person
- \item Spam or visible incompetence
- \item Intentional abuse of tags or sections
- \item Off-topic comments
- \item Promotion of any of the above
-\end{enumerate}
+On the twenty-sixth (26th) of January, May, and September, all Members who have joined at least one hundred twenty (120) days before that date will have infraction points taken per $f : \mathbb{Z} \Rightarrow \mathbb{N}_0$, wherein $p$ is the number of infraction points previously possessed:
 
-\section{Consequences of posting prohibited content}
-\label{sec:postcons}
+$$f(p) = \left\lbrace \begin{array}{rl}
+ 50, & p \ge 50 \\
+ \min(25, p + 50), & p \le 0 \\
+ \lfloor25 + .5p\rfloor, & \text{otherwise}
+\end{array} \right. $$
 
-\subsection{General}
+All infractions must garner at least two (2) points.
 
-A Member who posts content listed in section \ref{sec:procon}, he or she may face one of the following consequences, from least severe to most:
+In addition, Moderators who accumulate at least twenty-five (25) infraction points shall lose their positions.
 
-\begin{enumerate}
- \item An informal or formal warning
- \item Temporary ban from posting for up to thirty (30) days
- \item Removal from Membership
-\end{enumerate}
+\subsection{Minimum punishments for each infraction}
+\label{subsec:postcons}
 
-In addition, Moderators who post prohibited content shall lose their positions.
+For each event wherein a Member gains infraction points, the following are the mildest punishments he or she may receive. The rightmost column is the minimum punishment permitted given received infraction points greater than or equal to the value in the first (1st) column, or (incl) total after new infraction points greater than or equal to the value in the second (2nd) column.
 
-\subsection{Minimum punishments for posting prohibited content}
-
-At the $n$th offense, counting from zero (0), the minimum punishments are as follows: \\
-
-\begin{tabular}{|r|l|}
+\begin{tabular}{|r|r|l|}
  \hline
- $n$ & Minimum \\ \hline
- 2 & Formal warning \\
- 5 & Posting ban for three (3) days \\
- 6 & Posting ban for seven (7) days \\
- 7 & Posting ban for fifteen (15) days \\
- 8 & Posting ban for thirty (30) days \\
- 9 & Removal from membership \\ \hline
-\end{tabular} \\
-
-Serious offenses may warrant more severe punishments than the minimum, and post infractions reset on January 26 of each year divisible by 3.
+ Received & Total & Result \\ \hline
+ 2 & 20 & Formal warning \\
+ 5 & 60 & Posting ban (3 days) \\
+ 7 & 80 & Posting ban (7 days) \\
+ 9 & 100 & Posting ban (15 days) \\
+ 12 & 120 & Posting ban (30 days) \\
+ $\infty$ & 150 & Removal from membership \\ \hline
+\end{tabular}
 
 \subsection{Notification of punishments}
 
 The Member receiving a punishment for posting prohibited content specified in section \ref{sec:procon} shall be notified with the following text:
 
-\newcommand{\nintro}{You have posted content in the domain of Touhou Prono prohibited by section \ref{sec:procon} in the version of the Touhou Prono Code effective at the time this message was sent. Therefore, your post may have been edited or deleted and }
-\newcommand{\nfinal}{Further violations may be punished more severely per section \ref{sec:postcons}.}
+\newcommand{\nintro}{You have posted content or otherwise behaved in a manner prohibited by section \ref{sec:procon} in the version of the Touhou Prono Code effective at the time this message was sent in the domain of Touhou Prono. Therefore, your post may have been edited or deleted and }
+\newcommand{\nfinal}{Further violations may be punished more severely per section \ref{subsec:postcons}.}
 
 \begin{enumerate}
  \item Formal warning: \\
@@ -318,7 +302,28 @@ The Member receiving a punishment for posting prohibited content specified in se
   }
 \end{enumerate}
 
-Informal warnings are not required to be notified in a certain format, but shall still increment the offending Member's post infraction count.
+Informal warnings are not required to be notified in a certain format.
+
+\subsection{Transparency of infraction history}
+
+The infraction history of all Members shall be viewable by all Moderators and the Leader.
+
+\section{Prohibited content and behavior}
+\label{sec:procon}
+
+Posts or behavior in the domains of Touhou Prono fulfilling one or more of the following criteria may be edited to comply with regulations or deleted:
+
+\begin{tabular}{|p{6cm}|r|r|}
+ \hline
+ Action & IP & IP (LA) \\ \hline
+ Falsifying information about Touhou Prono or the Code, unless explicitly declared as such; impersonating another person & 2 -- 5 & 2 -- 12 \\
+ Illegal content; embedded pornographic or otherwise NSFW (not safe for work) content, or links to such content without a sufficient warning & 5 -- 15 & 5 -- 150 \\
+ Racial slurs; excessive profanity & 2 -- 6 & 2 -- 15 \\
+ Spam or visible incompetence; intentional abuse of tags or sections; off-topic comments & 3 -- 10 & 3 -- 30 \\
+ Vandalism of content, including GitHub repositories & 2 -- 10 & 2 -- 100 \\
+ Abuse of position & 10 -- 80 & 10 -- 150 \\
+ Promotion of any of the above (for $x$ points) & $\lfloor.5x\rfloor$ -- $2x$ & $\lfloor.5x\rfloor$ -- $4x$ \\ \hline
+\end{tabular}
 
 \section{Discouraged behavior}
 \label{discon}
